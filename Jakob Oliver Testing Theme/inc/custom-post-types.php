@@ -128,12 +128,12 @@ function jakes_register_cpt_messages () {
         'singular_name'  => $singular,
         'menu_name'      => $plural,
         'name_admin_bar' => $singular,
+        'edit_item'      => $singular
     );
 
     $supports = array (
         'title',
         'editor',
-        'author',
     );
 
     $args = array(
@@ -162,7 +162,6 @@ function jakes_edit_message_columns( $columns ) {
     $newColumns['message'] = 'Message';
     $newColumns['email'] = 'Email';
     $newColumns['date'] = 'Date';
-    $newColumns['cb'] = '<input type="checkbox" />';
     return $newColumns;
 }
 
@@ -249,4 +248,17 @@ function jakes_save_email_data ( $post_id ) {
 }
 
 add_action ('save_post', 'jakes_save_email_data');
+
+//prevent user from ever being able to edit the messages by removing publish box
+
+
+function jakes_remove_publish_mbox()
+{
+    remove_meta_box( 'submitdiv', 'message', 'side' );
+}
+
+add_action( 'do_meta_boxes', 'jakes_remove_publish_mbox', 10, 3 );
+
+
+
 

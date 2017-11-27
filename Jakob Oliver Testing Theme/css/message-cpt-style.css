@@ -1,0 +1,19 @@
+a.page-title-action {
+    display: none;
+}
+
+.subsubsub {
+	display: none;
+}
+
+span.edit {
+    display: none;
+}
+
+span.inline.hide-if-no-js {
+    display: none;
+}
+
+button#insert-media-button {
+	display: none;
+}

@@ -70,3 +70,19 @@ require_once ('class-wp-bootstrap-navwalker.php'); //this is the nav walker page
 require get_template_directory() . '/inc/custom-post-types.php';
 require get_template_directory() . '/inc/shortcodes.php';
 require get_template_directory() . '/inc/ajax.php';
+
+
+//enqueing style sheet message-cpt-style to only run when dealing with cpt 'message'
+function jakes_message_enqueue_scripts() {
+
+    global $pagenow, $typenow;
+    
+    if ( $typenow == 'message') {
+
+        wp_enqueue_style('message-cpt-style', get_template_directory_uri().'/css/message-cpt-style.css', false, '1.0.0', 'all');
+        wp_enqueue_script('customjs-jakob', get_template_directory_uri().'/js/message-cpt-script.js', array(), '1.0.0', true);
+
+    }
+}    
+
+add_action ('admin_enqueue_scripts', 'jakes_message_enqueue_scripts');
