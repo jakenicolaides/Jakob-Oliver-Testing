@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no">
-        <title>Jakob Theme</title>
+        <title><?= get_bloginfo(); ?></title>
         <?php wp_head(); //prints script data in head?>
     </head>
     <body <?php body_class(); //tells wordpress where body starts ?>
