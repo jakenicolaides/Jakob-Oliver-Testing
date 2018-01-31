@@ -135,6 +135,10 @@ function jakes_register_cpt_messages () {
         'title',
         'editor',
     );
+    
+    $capabilities = array(
+        'create_posts' => 'do_not_allow'
+    );
 
     $args = array(
         'labels'          => $labels,
@@ -142,6 +146,8 @@ function jakes_register_cpt_messages () {
         'show_ui'         => true,
         'show_in_menu'    => true,
         'capability_type' => 'post',
+        'capabilities'    => $capabilities,
+        'map_meta_cap'    => true,
         'hierarchical'    => false,
         'menu_position'   => 26,
         'supports'        => $supports
