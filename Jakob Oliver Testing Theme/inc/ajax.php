@@ -49,7 +49,7 @@ function jakes_save_contact() {
 
 		$headers[] = 'From: '.get_bloginfo('name').' <'.$to.'>'; 
 		$headers[] = 'Reply-To: '.$title.' <'.$email.'>'; // 'Reply-To: Jake <hello@jakoboliver.com>'
-		$headers[] = 'Content-Type: text/html: charset=UTF-8';
+		$headers[] = 'Content-Type: text/html; charset=UTF-8';
 
 		wp_mail($to, $subject, $message, $headers);
 
