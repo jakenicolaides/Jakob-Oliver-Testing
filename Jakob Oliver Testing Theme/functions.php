@@ -5,6 +5,7 @@ function jakob_script_enqueue() {
   wp_enqueue_style('customstyle', get_template_directory_uri().'/css/jakob.css', false, '1.0.0', 'all');
   wp_enqueue_script('customjs-jakob', get_template_directory_uri().'/js/jakob.js', array(), '1.0.0', true);
   wp_enqueue_script('customjs-contact', get_template_directory_uri().'/js/contact-form.js', array(), '1.0.0', true);
+  wp_enqueue_script('font-awesome', 'https://use.fontawesome.com/releases/v5.0.4/js/all.js', array(), '1.0.0', true);
 }
 
 add_action( 'wp_enqueue_scripts', 'jakob_script_enqueue');
